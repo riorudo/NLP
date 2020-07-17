@@ -6,8 +6,8 @@ const cors = require('cors');
 const app = express()
 const aylien = require('aylien_textapi');
 const textapi = new aylien({
-    application_id: "d27ade7b",
-    application_key: "9d8fd45a81874c6b43efff172e1b2142"
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
 });
 
 app.use(express.static('dist'))
