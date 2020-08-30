@@ -1,6 +1,7 @@
 const env = require('dotenv').config();
 const path = require('path')
 const express = require('express')
+const axios = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const cors = require('cors');
 const app = express()
@@ -10,26 +11,50 @@ const textapi = new aylien({
     application_key: process.env.API_KEY
 });
 
-app.use(express.static('dist'))
+app.use(express.static('../../dist'))
 app.use(cors());
 
-console.log(__dirname)
+/* Middleware*/
+//Here we are configuring express to use body-parser as middle-ware.
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
-})
+const getDataFromTextApi = async (url = '') => {
+    try {
+        const res = await axios.get(url);
+        const data = {};
+        data.name = res.data.city.name;
+        data.coord = res.data.city.coord;
+        data.date = mapWeatherDataValues(res.data.list, 'dt');
+        data.minTemp = mapWeatherDataValues(res.data.list, 'temp.min');
+        data.maxTemp = mapWeatherDataValues(res.data.list, 'temp.max');
+        return data;
+    } catch (e) {
+        console.log("error", e);
+    }
+};
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
-    console.log(process.env.API_ID)
 })
 
-app.get('/test', function (req, res) {
-    textapi.sentiment({'text': 'John is a very good football player'}, function(err, result, rateLimits) {
-            console.log(rateLimits);
-        });
-    res.send(mockAPIResponse)
+app.post('/sentiment', async function (req, res) {
+    const searchParam = {
+        language: 'en'
+    }
+    if (req.body.text) {
+        searchParam.text = req.body.text;
+    } else {
+        searchParam.url = req.body.url;
+    }
+    textapi.entities(searchParam, function (err, result, rateLimits) {
+        if (result && rateLimits) {
+            res.send(result);
+        } else {
+            res.send(mockAPIResponse);
+        }
+    });
 })
 

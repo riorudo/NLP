@@ -3,23 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title>Evaluate a News Article with NLP</title>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto">
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
+            <div>
+                <img src="src/client/img/logo.PNG" class="nlp-logo">
             </div>
         </header>
 
         <main>
-            <section>
+            <section class="nlp-form">
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
+                    <input id="url" name="url" value="" placeholder="Url for entity analysis...">
+                    <textarea id="text" name="text" value="" placeholder="Text for entity analysis..."></textarea>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
