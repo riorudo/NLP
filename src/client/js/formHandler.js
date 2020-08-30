@@ -24,7 +24,11 @@ function handleSubmit(event) {
         .then(res => res.json())
         .then(data => {
             console.log('Success:', data);
-            document.getElementById('results').innerHTML = data.message
+            if (data && data.entities && Object.keys(data.entities).length > 0) {
+                Client.renderEntities(data.entities);
+            } else {
+                document.getElementById('error').innerHTML = 'No information found. Please try with another url or test.';
+            }
         })
         .catch((error) => {
             console.error('Error:', error);

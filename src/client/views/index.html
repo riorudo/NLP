@@ -10,28 +10,35 @@
     <body>
 
         <header>
-            <div>
-                <img src="src/client/img/logo.PNG" class="nlp-logo">
+            <div class="logo">
+                <img src="src/client/img/logo.PNG">
+            </div>
+            <div class="title">
+                <h1>Text analysis</h1>
             </div>
         </header>
 
         <main>
-            <section class="nlp-form">
-                <form class="" onsubmit="return Client.handleSubmit(event)">
+            <section class="box">
+                <span>Enter an URL to a webpage or an text in order to extract all containing entities over NPL - Text analysis</span>
+                <form onsubmit="return Client.handleSubmit(event)">
                     <input id="url" name="url" value="" placeholder="Url for entity analysis...">
                     <textarea id="text" name="text" value="" placeholder="Text for entity analysis..."></textarea>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
-
-            <section>
-                <strong>Form Results:</strong>
+            <section class="box error">
+                <div id="error">Error</div>
+            </section>
+            <section class="box results">
+                <h2 class="resultTitle">Found entities</h2>
                 <div id="results"></div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <span class="copyleft">&copy;</span>
+            <span>Copyleft 2020</span>
         </footer>
 
     </body>

@@ -1,11 +1,9 @@
-.nlp-form {
-    margin: auto;
-}
+@import "variables";
 
 form {
-    border: 1px solid #545454;
+    border: 1px solid $base-color;
     border-radius: 3px;
-    padding: 40px;
+    padding: 20px;
 }
 
 input, textarea {
@@ -13,4 +11,8 @@ input, textarea {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+}
+
+.form {
+    margin: auto;
 }

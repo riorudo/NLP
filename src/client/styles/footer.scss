@@ -1,0 +1,13 @@
+@import "variables";
+
+footer {
+  grid-area: ft;
+  box-sizing: border-box;
+  padding: 20px 20px;
+  color: $base-color;
+}
+
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}

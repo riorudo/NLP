@@ -1,19 +1,20 @@
-html {
+@import "variables";
+
+html * {
     font-family: 'Roboto', serif;
+    font-size: 1em;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #4b6982;
+    display: grid;
+    grid-template-rows: 150px calc(100vh - 210px) 60px;
+    grid-template-areas: "hd" "main" "ft";
+    box-sizing: border-box;
+    background-color: $base-background-color;
 }
 
-main {
-    flex: 2;
-}
-
-section {
-    max-width: 800px;
-    margin: 50px auto;
+.box {
+    border: 1px solid $base-color;
+    border-radius: 3px;
+    padding: 20px;
 }
