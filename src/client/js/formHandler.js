@@ -13,6 +13,7 @@ function handleSubmit(event) {
     //     .then(function (res) {
     //         document.getElementById('results').innerHTML = res.message
     //     })
+    document.getElementById('loadingModal').style.display = 'block';
     fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -29,6 +30,7 @@ function handleSubmit(event) {
             } else {
                 document.getElementById('error').innerHTML = 'No information found. Please try with another url or test.';
             }
+            document.getElementById('loadingModal').style.display = 'none';
         })
         .catch((error) => {
             console.error('Error:', error);

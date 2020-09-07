@@ -35,21 +35,30 @@ section {
 
 .entityKey {
     box-sizing: border-box;
-    width: 20%;
-    padding: 0 10px 0 0;
+    width: 100%;
     font-size: 1.5em;
     font-weight: 700;
     color: $base-color;
+    padding: 0 0 10px 0;
 }
 
 .entityItems {
     box-sizing: border-box;
-    width: 80%;
-    padding: 10px 0 10px 10px;
+    width: 100%;
 }
 
 @media (min-width: 900px) {
     .entity {
         flex-direction: row;
+    }
+
+    .entityKey {
+        width: 20%;
+        padding: 0 10px 0 0;
+    }
+
+    .entityItems {
+        width: 80%;
+        padding: 10px 0 10px 10px;
     }
 }
