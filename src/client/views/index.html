@@ -49,19 +49,25 @@
 </main>
 
 <footer>
-    <span class="copyleft">&copy;</span>
-    <span>Copyleft 2020</span>
+    <div class="footer">
+        <span>NPL analysis is provided by <a href="https://aylien.com/" title="Go to the AYLIEN webpage." target="_blank">AYLIEN</a>, which offers a powerful API.</span><br>
+        <span class="copyleft">&copy;</span>
+        <span>Copyleft 2020</span>
+    </div>
 </footer>
 <div id="loadingModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
-        <div class="lds-ripple"><div></div><div></div></div>
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
         <span class="lds-text">Analyze text...</span>
     </div>
 
 </div>
-<link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Roboto" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
