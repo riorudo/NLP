@@ -11,18 +11,19 @@ section {
 }
 
 .error {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
     display: none;
 }
 
 .results {
-    //display: none;
+    display: none;
+    background-color: $base-color;
 }
 
 .resultTitle {
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: 700;
-    color: $base-color;
+    padding-bottom: 10px;
 }
 
 .entity {
@@ -31,6 +32,7 @@ section {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    background-color: $base-background-color;
 }
 
 .entityKey {

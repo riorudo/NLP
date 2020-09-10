@@ -7,7 +7,7 @@ html * {
 
 body {
     display: grid;
-    grid-template-rows: 150px calc(100vh - 210px) 60px;
+    grid-template-rows: 150px auto 60px;
     grid-template-areas: "hd" "main" "ft";
     box-sizing: border-box;
     background-color: $base-background-color;

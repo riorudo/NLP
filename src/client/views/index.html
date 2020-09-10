@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Evaluate a News Article with NLP</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 </head>
 
 <body>
@@ -13,22 +14,22 @@
         <img alt="Logo of page" src="./src/client/img/logo.png">
     </div>
     <div class="title">
-        <h1>Text analysis</h1>
+        <h1>Evaluate Articles with NLP</h1>
     </div>
 </header>
 
 <main>
     <section class="box form">
         <div class="formDesc">
-            <span>Enter an URL to a Webpage or a text to extract all containing entities</span>
+            <span>Enter an url or a text for entity extraction</span>
         </div>
         <form onsubmit="return Client.handleSubmit(event)">
-            <label for="url">URL</label>
-            <input id="url" name="url" value="" placeholder="Enter an url for entity analysis...">
+            <label for="url">Url</label>
+            <input id="url" name="url" value="" placeholder="Enter an url for entity extraction...">
             <br>
             <br>
             <label for="text">Text</label>
-            <textarea id="text" name="text" value="" placeholder="Enter a text for entity analysis..."></textarea>
+            <textarea id="text" name="text" value="" placeholder="Enter a text for entity extraction..."></textarea>
             <button class="submitBtn"
                     type="submit"
                     name="submit"
@@ -38,10 +39,10 @@
             </button>
         </form>
     </section>
-    <section class="box error">
-        <div id="error">Error</div>
+    <section id="errorBox" class="box error">
+        <div id="error"></div>
     </section>
-    <section class="box results">
+    <section id="resultsBox" class="box results">
         <h2 class="resultTitle">Found entities</h2>
         <div id="results"></div>
     </section>
@@ -56,10 +57,19 @@
     <!-- Modal content -->
     <div class="modal-content">
         <div class="lds-ripple"><div></div><div></div></div>
-        <span class="lds-text">Loading...</span>
+        <span class="lds-text">Analyze text...</span>
     </div>
 
 </div>
 <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Roboto" >
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js');
+        });
+    }
+</script>
 </body>
 </html>

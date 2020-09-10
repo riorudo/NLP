@@ -2,9 +2,13 @@
 
 footer {
   grid-area: ft;
+  align-self: end;
   box-sizing: border-box;
-  padding: 20px 20px;
+  padding: 20px 10px;
   color: $base-color;
+  display: block;
+  max-width: 900px;
+  margin: 50px auto;
 }
 
 .copyleft {

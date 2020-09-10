@@ -1,5 +1,5 @@
 {
-  "name": "example-project",
+  "name": "NPL",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,9 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michael Hochwieser",
   "license": "ISC",
-  "description": "",
+  "description": "Evaluate Articles with NLP",
   "dependencies": {
     "aylien_textapi": "^0.7.0",
     "body-parser": "^1.19.0",
@@ -24,14 +24,15 @@
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
-    "file-loader": "^6.1.0",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
+    "file-loader": "^6.1.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "workbox-webpack-plugin": "^5.1.4"
   }
 }
