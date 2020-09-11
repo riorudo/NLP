@@ -9,7 +9,7 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
   "keywords": [],
-  "author": "Michael Hochwieser",
+  "author": "riorudo",
   "license": "ISC",
   "description": "Evaluate Articles with NLP",
   "dependencies": {

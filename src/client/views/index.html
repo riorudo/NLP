@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Evaluate a News Article with NLP</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=5" name="viewport"/>
+    <meta name="description" content="Evaluate Articles with NLP">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 </head>
 
@@ -21,11 +22,11 @@
 <main>
     <section class="box form">
         <div class="formDesc">
-            <span>Enter an url or a text for entity extraction</span>
+            <span>Enter a url or a text for entity extraction</span>
         </div>
         <form onsubmit="return Client.handleSubmit(event)">
             <label for="url">Url</label>
-            <input id="url" name="url" value="" placeholder="Enter an url for entity extraction...">
+            <input id="url" name="url" value="" placeholder="Enter a url for entity extraction...">
             <br>
             <br>
             <label for="text">Text</label>
@@ -50,7 +51,8 @@
 
 <footer>
     <div class="footer">
-        <span>NPL analysis is provided by <a href="https://aylien.com/" title="Go to the AYLIEN webpage." target="_blank">AYLIEN</a>, which offers a powerful API.</span><br>
+        <span>NPL analysis is provided by <a rel="noopener" href="https://aylien.com/" title="Go to the AYLIEN webpage."
+                                             target="_blank">AYLIEN</a>.</span><br>
         <span class="copyleft">&copy;</span>
         <span>Copyleft 2020</span>
     </div>
