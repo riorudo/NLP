@@ -1,6 +1,5 @@
 function renderResult(data) {
     const entities = data.entities;
-    const test = data.text;
     const resultsBox = document.getElementById('resultsBox');
     const resultsElem = document.getElementById('results');
     let templateEntityStr = ``;

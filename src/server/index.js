@@ -20,21 +20,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-const getDataFromTextApi = async (url = '') => {
-    try {
-        const res = await axios.get(url);
-        const data = {};
-        data.name = res.data.city.name;
-        data.coord = res.data.city.coord;
-        data.date = mapWeatherDataValues(res.data.list, 'dt');
-        data.minTemp = mapWeatherDataValues(res.data.list, 'temp.min');
-        data.maxTemp = mapWeatherDataValues(res.data.list, 'temp.max');
-        return data;
-    } catch (e) {
-        console.log("error", e);
-    }
-};
-
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
