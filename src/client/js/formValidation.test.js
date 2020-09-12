@@ -5,5 +5,5 @@ test('Form validation', () => {
 });
 
 test('Url pattern validation', () => {
-    expect(validation.urlValidation('.example.com')).toBe(false);
+    expect(validation.urlValid('.example.com')).toBe(false);
 });

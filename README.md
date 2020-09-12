@@ -12,13 +12,15 @@ process and analyze large amounts of natural language data.
 `cd` into your new folder and run:
 - `npm install`
 
-## Setting up the API
+## Setting up the AYLIEN API
 
 ### Step 1: Signup for an API key
 First, you will need to go [here](https://developer.aylien.com/signup). Signing up will get you an API key.
+
 ### Step 2: Install the SDK
 Next you'll need to install the SDK. The page is available [here](https://docs.aylien.com/textapi/sdks/#sdks).
 
+### Step 3: Configure API credentials
 - [ ] Use npm or yarn to install the dotenv package ```npm install dotenv```.
 - [ ] Create a new ```.env``` file in the root of your project
 - [ ] Go to your .gitignore file and add ```.env```
@@ -36,8 +38,9 @@ $ npm run build-prod
 ```
 or (for dev)
 ```
-$ npm run build-dev
+$ npm run build-dev // runs on http://localhost:8080
 ```
+
 ### Step 2: Run node server
 After the build process is completed, start your node server.
 ```
@@ -50,3 +53,9 @@ Navigate to:
 http://localhost:8081
 ```
 and have fun :-)
+
+## Test application
+Run
+```
+$ npm run test
+```

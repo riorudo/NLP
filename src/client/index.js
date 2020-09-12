@@ -1,5 +1,5 @@
 import {formValidation} from './js/formValidation';
-import {urlValidation} from './js/formValidation';
+import {urlValid} from './js/formValidation';
 import {renderResult} from './js/renderResult';
 import {handleSubmit} from './js/formHandler';
 import {renderError} from './js/renderError';
@@ -14,7 +14,7 @@ import img from './img/logo.png';
 export {
     renderError,
     formValidation,
-    urlValidation,
+    urlValid,
     renderResult,
     handleSubmit
 }
