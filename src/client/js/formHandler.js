@@ -6,7 +6,7 @@ function handleSubmit(event) {
     let formText = document.getElementById('text').value
     const url = 'http://localhost:8081/sentiment';
     resetResponse();
-    if (!window.navigator.onLine) {
+    if (!isOnline()) {
         Client.renderError("You are offline! Please try to reconnect your device.");
         return;
     }
@@ -44,4 +44,9 @@ function resetResponse() {
     document.getElementById('error').innerHTML = '';
 }
 
+function isOnline() {
+    return window.navigator.onLine;
+}
+
+export {isOnline}
 export {handleSubmit}
